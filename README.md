@@ -1,1 +1,1 @@
-# SurveyDonkey_BeOS
+This repo belongs to "Survey Donkey".
