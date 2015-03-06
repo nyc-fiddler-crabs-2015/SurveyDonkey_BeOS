@@ -1,0 +1,7 @@
+<h1><%=@survey.title%></h1>
+<% @survey.questions.each_with_index do |question, qi| %>
+  <div><%= "#{qi+1}. #{question.title}" %></div>
+  <% question.choices.each_with_index do |choice, ci| %>
+  <div><%= "#{ci+1}. #{choice.title}" %></div>
+  <%end%>
+<%end%>
