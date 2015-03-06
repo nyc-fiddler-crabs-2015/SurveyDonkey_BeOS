@@ -37,7 +37,7 @@ header {
 
 }
 header div {
-  padding: 5px 5px; 
+  padding: 5px 5px;
 
 
 
@@ -59,15 +59,3 @@ header a, header a:hover {
 
 }
 
-div #guess{margin: 0 auto;
-}
-.avatar {
-  border-radius: 100%;
-  border: black solid 1px;
-    display:block;
-    margin:auto;
-}
-
-#ajaxPlace div {
-  text-align: center;
-}
