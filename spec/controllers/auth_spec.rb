@@ -27,9 +27,14 @@ describe 'POST /authentication/login' do
   end
 end
 
-
-
-
+describe 'POST /authentication/register_user' do
+  it 'should register a user' do
+    post '/authentication/register_user', params = {user:{email: "jay@email.com", password: "psword"}}
+    expect(last_response).to be_redirect
+    follow_redirect!
+    last_response.path.should == "/"
+  end
+end
 
 
 
