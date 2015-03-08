@@ -3,6 +3,7 @@ get '/surveys/new' do
 end
 
 post '/surveys/new' do
+	params[:user_id] = session[:user_id]
 	@survey = Survey.create(params)
 	redirect "/surveys/#{@survey.id}/edit"
 end
