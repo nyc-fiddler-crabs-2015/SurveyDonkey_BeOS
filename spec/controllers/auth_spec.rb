@@ -18,6 +18,17 @@ describe 'GET /authentication/signin' do
   end
 end
 
+describe 'POST /authentication/login' do
+  it 'should log in a registered user' do
+    post '/authentication/login', params = {user:{email: "dongchul@email.com", password: "password"}}
+    expect(last_response).to be_redirect
+    follow_redirect!
+    last_response.path.should == "/users/#{user.id}"
+  end
+end
+
+
+
 
 
 
