@@ -1,7 +1,6 @@
 get '/users/:id' do
   @user = User.find(params[:id])
-  @surveys = Survey.all
-  puts params
+  @surveys = Survey.where("user_id = #{params[:id]}")
   erb :'users/home'
 end
 
