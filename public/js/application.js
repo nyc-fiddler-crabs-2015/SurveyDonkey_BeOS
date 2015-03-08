@@ -19,10 +19,10 @@ $(document).ready(function() {
 			//
 
 				if ($(".newChoice").length){
-					$(".newChoice:last").after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
+					$(".newChoice:last").after('<div class="question-line">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
 						'<div class="btn btn-default newChoice" data-action="/surveys/'+response.surveyID+'/questions/'+response.questionID+'/choices/new">Add Choice</div>');
 				} else {
-					$("input:first" ).after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
+					$("input:first" ).after('<div class="question-line">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
 						'<div class="btn btn-default newChoice" data-action="/surveys/'+response.surveyID+'/questions/'+response.questionID+'/choices/new">Add Choice</div>');
 				}
 		},
@@ -42,7 +42,7 @@ $(document).ready(function() {
 			data: null,
 			success: function(response){
 				console.log(response)
-				$(that).before('<div class="formline">C '+response.lastQuestion+': <input type="text" name="choice['+response.questionID+']['+response.choiceID+']" value="blank"></div>')
+				$(that).before('<div class="choice-line">C '+response.lastQuestion+': <input type="text" name="choice['+response.questionID+']['+response.choiceID+']" value="blank"></div>')
 
 			},
 			error: function(callback){

@@ -6,7 +6,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 text-center">
-			<a href="/authentication/signup" class="learn-more-btn btn-scroll">+Create Survey</a>
+			<a href="/surveys/new" class="learn-more-btn btn-scroll">+Create Survey</a>
 		</div>
 	</div>
 </section>
@@ -29,7 +29,7 @@
 				<% @surveys.each do |survey| %>
 				<tr>
 					<td><a href="/surveys/<%= survey.id %>"><%= survey.title %></a></td>
-					<td><%= survey.updated_at.strftime("%d/%m/%Y at %H:%M") %></td>
+					<td><%= survey.updated_at.strftime("%m/%d/%Y at %I:%M %p") %></td>
 					<td><a href="/users/<%= survey.user.id %>"><%= survey.user.email %></a></td>
 				</tr>
 				<% end %>
