@@ -18,8 +18,7 @@
 			<tr>
 				<th>Survey Name</th>
 				<th>Last Modified</th>
-				<th>Responses</th>
-				<th>Actions</th>
+				<th>User</th>
 
 			</tr>
 		</thead>
@@ -30,9 +29,8 @@
 				<% @surveys.each do |survey| %>
 				<tr>
 					<td><a href="/surveys/<%= survey.id %>"><%= survey.title %></a></td>
-					<td><%= survey.updated_at.strftime("%d/%m/%Y at %H:%M")%></td>
-					<td>N/A</td>
-					<td><a href="/surveys/<%= survey.id %>/edit">Edit</a> | Stats | Delete</td>
+					<td><%= survey.updated_at.strftime("%d/%m/%Y at %H:%M") %></td>
+					<td><a href="/users/<%= survey.user.id %>"><%= survey.user.email %></a></td>
 				</tr>
 				<% end %>
 

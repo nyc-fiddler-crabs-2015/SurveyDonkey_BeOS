@@ -1,15 +1,16 @@
-<div><h3>Create New Survey</h3></div>
-<form action="/surveys/<%= @survey.id %>" method="post">
+<div><h3>Edit Survey</h3></div>
+<div class="status"></div>
+	<form id="surveyEdit" action="/surveys/<%= @survey.id %>" method="post">
 	<input type="hidden" name="_method" value="put" />
 	<% @survey.questions.each_with_index do |question,qi| %>
-	<div class="formline">Q <%= qi + 1 %>: <input type="text" name="question[<%= question.id %>]" value="<%= question.title %>"></div>
+	<div class="formline">Q <%= qi + 1 %>: <input type="text" data-q_id="<%= question.id %>]" name="question[<%= question.id %>]" value="<%= question.title %>"></div>
 		<% question.choices.each_with_index do |choice,ci| %>
 		<div class="formline">C <%= ci + 1 %>: <input type="text" name="choice[<%= question.id %>][<%= choice.id %>]" value="<%= choice.title %>"></div>
 		<% end %>
 		<%= erb :'partials/_new_choice', :layout => false, :locals => { :question => question } %>
 
 	<% end %>
-	<%= erb :'partials/_new_question' %>
-	<div class="formline"><input type="submit" value="Update Survey"></div>
+	<div class=""><input class="btn btn-default" type="submit" value="Update Survey"></div>
 </form>
+	<%= erb :'partials/_new_question', :layout => false %>
 

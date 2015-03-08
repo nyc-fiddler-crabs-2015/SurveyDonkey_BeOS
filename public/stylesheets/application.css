@@ -68,3 +68,6 @@ body {
 .brand-heading {
     font-size: 40px;
 }
+ ul.dropdown-menu {
+    top: 3.5em;
+  }
