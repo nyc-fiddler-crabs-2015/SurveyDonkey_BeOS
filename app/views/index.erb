@@ -1,9 +1,5 @@
-
-
-
-
- <div class="wide">
-    <section class="hero" id="intro">
+<div class="wide">
+<section class="hero" id="intro">
     <div class="container">
       <div class="row">
       </div>
@@ -17,22 +13,21 @@
 </section>
 </div>
 
-<div>
-  <ul class="list-group">
- <% @surveys.each do |survey| %>
-    <li><%= survey.title %></li>
-  <% end %>
-</ul>
+<div class="table_fixed">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Survey Name</th>
+        <th>Last Modified</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @surveys.each do |survey| %>
+      <tr>
+        <td><a href="/surveys/<%= survey.id %>"><%= survey.title %></a></td>
+        <td><%= survey.updated_at.strftime("%d/%m/%Y at %H:%M")%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
-<!--
-<div>
-<ul class="list-group">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
-</ul>
-</div>
- -->
