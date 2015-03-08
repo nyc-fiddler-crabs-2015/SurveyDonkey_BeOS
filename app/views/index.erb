@@ -12,7 +12,9 @@
 
 <div class="divider"></div>
 
-<div class="wide">
+
+
+ <div class="wide">
     <section class="hero" id="intro">
     <div class="container">
       <div class="row">
@@ -27,4 +29,22 @@
 </section>
 </div>
 
+<div>
+  <ul class="list-group">
+ <% @surveys.each do |survey| %>
+    <li><%= survey.title %></li>
+  <% end %>
+</ul>
+</div>
 
+<!--
+<div>
+<ul class="list-group">
+  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul>
+</div>
+ -->
