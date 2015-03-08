@@ -36,6 +36,16 @@ describe 'POST /authentication/register_user' do
   end
 end
 
+describe 'GET /authentication/logout' do
+  it 'should log out current user' do
+    get '/authentication/logout'
+    expect(last_response).to be_redirect
+    follow_redirect!
+    last_response.path.should == '/'
+  end
+end
+
+end
 
 
 
