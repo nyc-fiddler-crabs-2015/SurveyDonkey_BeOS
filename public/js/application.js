@@ -8,21 +8,21 @@ $(document).ready(function() {
 			data: null,
 			success: function(response){
 				console.log(response);
-				// $(".newChoice:last" || "input:first" ).after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' + 
+				// $(".newChoice:last" || "input:first" ).after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
 				// 	'<div class="btn btn-default newChoice" data-action="/surveys/'+response.surveyID+'/questions/'+response.questionID+'/choices/new">Add Choice</div>'
 				// 	);
 
-				// $("input:first" ).after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' + 
+				// $("input:first" ).after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
 				// 	'<div class="btn btn-default newChoice" data-action="/surveys/'+response.surveyID+'/questions/'+response.questionID+'/choices/new">Add Choice</div>'
 				// 	);
 			// response.survey_id
-			// 
+			//
 
 				if ($(".newChoice").length){
-					$(".newChoice:last").after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' + 
+					$(".newChoice:last").after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
 						'<div class="btn btn-default newChoice" data-action="/surveys/'+response.surveyID+'/questions/'+response.questionID+'/choices/new">Add Choice</div>');
 				} else {
-					$("input:first" ).after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' + 
+					$("input:first" ).after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
 						'<div class="btn btn-default newChoice" data-action="/surveys/'+response.surveyID+'/questions/'+response.questionID+'/choices/new">Add Choice</div>');
 				}
 		},
@@ -87,16 +87,11 @@ $(document).ready(function() {
 			success: function(callback){
 				console.log(callback);
 				$(".status").html('<div class="alert alert-success alert-dismissible" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+callback+'</div>')
-
 			},
 			error: function(callback){
 				console.log(callback.responseText);
 				$(".status").html('<div class="alert alert-warning alert-dismissible" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+callback.responseText+'</div>')
-
 			}
 		});
-
 	});
-
-
 });
