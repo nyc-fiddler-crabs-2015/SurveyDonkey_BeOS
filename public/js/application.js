@@ -60,12 +60,12 @@ $(document).ready(function() {
 			data: $(this).serialize(),
 			success: function(callback){
 				console.log(callback);
-				$(".status").html('<div class="alert alert-success alert-dismissible" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+callback+'</div>')
+				$(".status").html('<div class="alert alert-success alert-dismissible" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <i class="fa fa-floppy-o"></i> '+callback+'</div>')
 
 			},
 			error: function(callback){
 				console.log(callback.responseText);
-				$(".status").html('<div class="alert alert-warning alert-dismissible" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+callback.responseText+'</div>')
+				$(".status").html('<div class="alert alert-warning alert-dismissible" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <i class="fa fa-exclamation-triangle"></i> '+callback.responseText+'</div>')
 
 			}
 		});
