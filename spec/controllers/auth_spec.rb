@@ -45,7 +45,7 @@ describe 'GET /authentication/logout' do
   end
 end
 
-end
+
 
 
 
