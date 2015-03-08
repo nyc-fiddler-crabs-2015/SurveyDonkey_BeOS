@@ -29,10 +29,10 @@ $(document).ready(function() {
 			//
 
 				if ($(".newChoice").length){
-					$(".newChoice:last").after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
+					$(".newChoice:last").after('<div class="question-line">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
 						'<div class="btn btn-default newChoice" data-action="/surveys/'+response.surveyID+'/questions/'+response.questionID+'/choices/new">Add Choice</div>');
 				} else {
-					$("input:first" ).after('<div class="formline">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
+					$("input:first" ).after('<div class="question-line">Q '+response.questionNum+': <input type="text" name="question['+response.questionID+']" value="blank"></div>' +
 						'<div class="btn btn-default newChoice" data-action="/surveys/'+response.surveyID+'/questions/'+response.questionID+'/choices/new">Add Choice</div>');
 				}
 		},
@@ -52,7 +52,7 @@ $(document).ready(function() {
 			data: null,
 			success: function(response){
 				console.log(response)
-				$(that).before('<div class="formline">C '+response.lastQuestion+': <input type="text" name="choice['+response.questionID+']['+response.choiceID+']" value="blank"></div>')
+				$(that).before('<div class="choice-line">C '+response.lastQuestion+': <input type="text" name="choice['+response.questionID+']['+response.choiceID+']" value="blank"></div>')
 
 			},
 			error: function(callback){
@@ -70,12 +70,12 @@ $(document).ready(function() {
 			data: $(this).serialize(),
 			success: function(callback){
 				console.log(callback);
-				$(".status").html('<div class="alert alert-success alert-dismissible" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+callback+'</div>')
+				$(".status").html('<div class="alert alert-success alert-dismissible" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <i class="fa fa-floppy-o"></i> '+callback+'</div>')
 
 			},
 			error: function(callback){
 				console.log(callback.responseText);
-				$(".status").html('<div class="alert alert-warning alert-dismissible" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+callback.responseText+'</div>')
+				$(".status").html('<div class="alert alert-warning alert-dismissible" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <i class="fa fa-exclamation-triangle"></i> '+callback.responseText+'</div>')
 
 			}
 		});

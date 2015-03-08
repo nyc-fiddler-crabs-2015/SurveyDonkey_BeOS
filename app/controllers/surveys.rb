@@ -52,5 +52,5 @@ put '/surveys/:id' do
 	else
 		return [500, headers, body= "You Need to add a question"]
 	end
-	return [200, headers, body= "Updated Survey"]
+	return [200, headers, body= "Survey Successfully Saved"]
 end
