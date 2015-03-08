@@ -18,7 +18,7 @@ end
 
 post '/authentication/register_user' do
   if params[:password] == params[:password_confirm]
-    user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
+    user = User.new(email: params[:email], password: params[:password])
     user.save
     session[:user_id] = user.id
     redirect '/'
