@@ -1,4 +1,4 @@
-post '/surveys/:id/question/new' do
+post '/surveys/:id/questions/new' do
 	@question = Question.create(title: "blank", survey_id: params[:id])
 	redirect back
 end
