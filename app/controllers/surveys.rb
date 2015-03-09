@@ -9,12 +9,27 @@ get '/surveys/new' do
 end
 
 post '/surveys/new' do
-	
+
 	params[:user_id] = session[:user_id]
 	@survey = Survey.create(params)
 	redirect "/surveys/#{@survey.id}/edit"
-	
+
 end
+
+post '/surveys/results/new' do
+	params.each do |key, value|
+		Result.create(choice_id:value)
+	end
+	@user = User.find(session[:user_id])
+	redirect "users/#{@user.id}"
+end
+
+get '/surveys/:id/results/view' do
+	@survey = Survey.find(params[:id])
+	@results = @survey.calc_results
+	erb :'/result/results_page'
+end
+
 
 get '/surveys/:id' do
 	@survey = Survey.find(params[:id])
@@ -44,7 +59,7 @@ put '/surveys/:id' do
 				else
 					return [500, headers, body= "You Need to add a choice"]
 				end
-			else 
+			else
 				return [500, headers, body= "You Need to add a choice"]
 			end
 
