@@ -3,9 +3,6 @@ user2 = User.create(email: "kevin", password: "123")
 user3 = User.create(email: "dongchul", password: "123")
 user4 = User.create(email: "justin", password: "123")
 
-
-
-
 survey1 = Survey.create(title: "Best Dogs", user_id: user1.id)
 survey2 = Survey.create(title: "Best Cats", user_id: user2.id)
 survey3 = Survey.create(title: "Best Dragons", user_id: user3.id)
@@ -63,9 +60,22 @@ s4q2choice2 = Choice.create(title: "choice:2", question_id: s4question2.id)
 s4q2choice3 = Choice.create(title: "choice:3", question_id: s4question2.id)
 s4q2choice4 = Choice.create(title: "choice:4", question_id: s4question2.id)
 
+Result.create(choice_id: 1)
+Result.create(choice_id: 2)
+Result.create(choice_id: 1)
+Result.create(choice_id: 3)
 
+Result.create(choice_id: 1)
+Result.create(choice_id: 2)
+Result.create(choice_id: 1)
+Result.create(choice_id: 4)
 
-  # belongs_to :user
-  # belongs_to :survey
-  # belongs_to :question
-  # belongs_to :choice
+Result.create(choice_id: 1)
+Result.create(choice_id: 4)
+Result.create(choice_id: 3)
+Result.create(choice_id: 1)
+
+Result.create(choice_id: 4)
+Result.create(choice_id: 1)
+Result.create(choice_id: 3)
+Result.create(choice_id: 1)

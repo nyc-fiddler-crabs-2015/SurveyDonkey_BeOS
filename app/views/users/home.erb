@@ -32,7 +32,7 @@
 					<td><a href="/surveys/<%= survey.id %>"><%= survey.title %></a></td>
 					<td><%= survey.updated_at.strftime("%m/%d/%Y at %I:%M %p")%></td>
 					<td>N/A</td>
-					<td><a href="/surveys/<%= survey.id %>/edit">Edit</a> | Stats | Delete</td>
+					<td><a href="/surveys/<%= survey.id %>/edit">Edit</a> | <a href="/surveys/<%= survey.id %>/results/view">Results</a> | Delete</td>
 				</tr>
 				<% end %>
 
